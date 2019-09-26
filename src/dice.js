@@ -1,6 +1,6 @@
 let DiceFactory = require("./diceFactory");
 
-class Dice {
+module.exports = class Dice {
   // Constructor for the dice class
   constructor(sides) {
     this.sides = sides;
@@ -42,8 +42,8 @@ class Dice {
     if (sum <= 0)
       throw new Error("probability sum must be greater than 0").message;
   }
-}
+};
 
-let dice2 = new Dice(6);
-let arr2 = dice2.setProbabilities([1, 1, 2, 3, 1, 1]);
-console.log(dice2);
+// let dice2 = new Dice(6);
+// let arr2 = dice2.setProbabilities([1, 1, 2, 3, 1, 1]);
+// console.log(dice2);
