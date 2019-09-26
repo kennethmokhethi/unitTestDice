@@ -1,4 +1,4 @@
-let DiceFactory = require("./DiceFactory");
+let DiceFactory = require("./diceFactory");
 
 class Dice {
   // Constructor for the dice class
