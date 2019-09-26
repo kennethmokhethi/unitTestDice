@@ -43,3 +43,7 @@ class Dice {
       throw new Error("probability sum must be greater than 0").message;
   }
 }
+
+let dice2 = new Dice(6);
+let arr2 = dice2.setProbabilities([1, 1, 2, 3, 1, 1]);
+console.log(dice2);
