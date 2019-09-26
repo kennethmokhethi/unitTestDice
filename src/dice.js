@@ -1,3 +1,5 @@
+let DiceFactory = require("./DiceFactory");
+
 class Dice {
   // Constructor for the dice class
   constructor(sides) {
