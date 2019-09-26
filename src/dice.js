@@ -10,10 +10,12 @@ class Dice {
     }
   }
 
+  //   Return random numbers with a certain range
   roll() {
     this.value = Math.round(Math.random() * (this.sides - 1) + 1);
   }
 
+  //   mutator method for setting the propabilty
   setProbabilities(arr) {
     for (var i = 0; i < arr.length; i++) {
       if (Number.isInteger(arr[i]) === false)
@@ -21,5 +23,21 @@ class Dice {
     }
     this.probability = arr;
     this.error_Handling();
+  }
+
+  // catching exception handlers
+  error_Handling() {
+    if (this.sides != this.probability.length)
+      throw new Error("The length of the array is not equal to the sides")
+        .message;
+    let sum = 0;
+
+    for (let a = 0; a < this.sides; a++) {
+      if (this.probability[a] < 0)
+        throw new Error("negative probabilities not allowed").message;
+      sum += this.probability[a];
+    }
+    if (sum <= 0)
+      throw new Error("probability sum must be greater than 0").message;
   }
 }
