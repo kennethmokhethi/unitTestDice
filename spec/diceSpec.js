@@ -47,3 +47,13 @@ describe("Error handling", () => {
     }
   });
 });
+
+describe("Testing factory if it produce the same dice", () => {
+  it("Should return the same dice", () => {
+    let factory20 = new DiceFactory(20);
+    let die20 = factory20.makeDice();
+    let anotherDie = factory20.makeDice();
+
+    expect(die20).toBe(anotherDie);
+  });
+});
