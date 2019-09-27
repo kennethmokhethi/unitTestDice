@@ -12,3 +12,14 @@ describe("Checking the sides range", () => {
     expect(isWithinRange).toBe(true);
   });
 });
+
+describe("Error handling", () => {
+  it("Check negative propability", () => {
+    let dieDodgy6 = new Dice(6);
+    try {
+      dieDodgy6.setProbabilities([1, 1, 1, 1, -1, 2]);
+    } catch (e) {
+      expect(e).toBeTruthy("negative probabilities not allowed");
+    }
+  });
+});
