@@ -1,4 +1,4 @@
-// let Dice = require("./dice");
+// let Dice = require("./dice"); Commented becuase it make the program not work when testing using jasmine
 
 class DiceFactory {
   // Cconstructor that accepts the dice as a parameter

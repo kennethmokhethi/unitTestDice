@@ -1,6 +1,3 @@
-// let Dice = require("../src/dice");
-// let DiceFactory = require("../src/diceFactory");
-
 describe("Checking the sides range", () => {
   it("Should print a number between 1 and 6", () => {
     let dice = new Dice(6);
@@ -48,8 +45,8 @@ describe("Error handling", () => {
   });
 });
 
-describe("Testing factory if it produce the same dice", () => {
-  it("Should return the same dice", () => {
+describe("Testing factory production", () => {
+  it("Should produce the same dice", () => {
     let factory20 = new DiceFactory(20);
     let die20 = factory20.makeDice();
     let anotherDie = factory20.makeDice();
