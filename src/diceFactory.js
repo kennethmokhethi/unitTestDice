@@ -19,14 +19,5 @@ let dice2 = new DiceFactory(3);
 
 dice2.makeDice().setProbabilities([2, 6, 7]);
 let dice3 = dice2.makeDice();
-// dice2.
-// let arr2 = dice2.setProbabilities([1, 1, 2, 3, 1, 1]);
-// console.log(dice2);
+
 console.log(dice3);
-
-// let dice = new Dice(6);
-// let factory20 = new DiceFactory(dice);
-// let die20 = factory20.makeDice();
-// let anotherDie20 = factory20.makeDice();
-
-// console.log(die20);
