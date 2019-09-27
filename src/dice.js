@@ -1,6 +1,7 @@
-let DiceFactory = require("./diceFactory");
+// let DiceFactory = require("./diceFactory");Commented becuase it make the program not work when testing using jasmine
 
-module.exports = class Dice {
+// module.exports = class Dice {  ///Commented becuase it make the program not work when testing using jasmine
+class Dice {
   // Constructor for the dice class
   constructor(sides) {
     this.sides = sides;
@@ -56,4 +57,4 @@ module.exports = class Dice {
     if (sum <= 0)
       throw new Error("probability sum must be greater than 0").message;
   }
-};
+}
