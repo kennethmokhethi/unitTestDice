@@ -4,7 +4,8 @@ module.exports = class Dice {
   // Constructor for the dice class
   constructor(sides) {
     this.sides = sides;
-    this.value;
+    this.value = 0;
+    // this.list = [];
 
     if (arguments.length == 2) {
       this.probability = arguments[1];
@@ -14,17 +15,30 @@ module.exports = class Dice {
 
   //   Return random numbers with a certain range
   roll() {
-    this.value = Math.round(Math.random() * (this.sides - 1) + 1);
+    return Math.round(Math.random() * (this.sides - 1) + 1);
   }
 
-  //   mutator method for setting the propabilty
+  //   mutator method for setting the propabilty for weihted
   setProbabilities(arr) {
     for (var i = 0; i < arr.length; i++) {
       if (Number.isInteger(arr[i]) === false)
         throw new Error("only integer values allowed").message;
     }
+
     this.probability = arr;
     this.error_Handling();
+    this.update();
+  }
+
+  // Updating the weighted value
+  update() {
+    let list = [];
+    for (var index = 1; index <= this.sides; index++) {
+      for (let b = 0; b < this.probability[index - 1]; b++) {
+        list.push(index);
+      }
+    }
+    this.value = list[this.roll()];
   }
 
   // catching exception handlers
@@ -43,7 +57,3 @@ module.exports = class Dice {
       throw new Error("probability sum must be greater than 0").message;
   }
 };
-
-// let dice2 = new Dice(6);
-// let arr2 = dice2.setProbabilities([1, 1, 2, 3, 1, 1]);
-// console.log(dice2);
